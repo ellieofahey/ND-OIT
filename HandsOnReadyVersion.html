@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Check UnCheck all Checkboxes with one Checkbox in JavaScript</title>
+  <link rel="stylesheet" href="2-styles.css">
+</head>
+
+<body>
+  <div class="sidenav">
+    <div class="description">
+      <h1>Describe your data</h1>
+      <p>Answer these questions to help identify data storage services that are suitable for your needs. Checking these boxes will change the list of available services.
+          If you are uncertain how to answer, leave the question blank to maximize your resulting options.</p>
+    </div>
+      <label class="container" onclick="filterObjects('all')">Show All
+        <input type="checkbox" >
+        <span class="checkmark"></span>
+      </label>
+
+      <span style="font-size: 25px;">1. </span><span style="font-size: 18pt">What is the classification of your data?</span>
+      <div class="question"> 
+        <label class="container" onclick="filterObjects('low')">Public / Low Risk
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" onclick="filterObjects('moderate')">Sensitive / Moderate Risk
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <label class="container" onclick="filterObjects('high')">Confidential or Restricted / High Risk
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+
+      <span style="font-size: 25px;">2. </span><span style="font-size: 18pt">Do you need backups, snapshots or replication of your data?</span> 
+      <div class="question">
+        <label class="container" onclick="filterObjects('durability')">I need one or more backup/snapshot copies of the data, and need to be able to restore data from previous points in time (high durability).
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+        <br/>
+        <label class="container" onclick="filterObjects('availability')">I need to have replicate copies of the data to minimize downtime (high availability).
+            <input type="checkbox">
+            <span class="checkmark"></span>
+        </label>
+
+      <span style="font-size: 25px;">3. </span><span style="font-size:18pt">How much data do you have and how fast will it grow?</span> 
+      <div class="question">
+          <label class="container" onclick="filterObjects('3-lessthan')">Unlikely to exceed 1TB in 2 years.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          <label class="container" onclick="filterObjects('3-greaterthan')">Greater than 1TB or likely to exceed in 2 years.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          </div>
+
+      <span style="font-size: 25px;">4. </span><span style="font-size: 18pt">Do you have special performance needs?</span> 
+      <div class="question">
+          <label class="container" onclick="filterObjects('4-files')">I am likely to have more than 1,000 files in a single directory within two years.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          <label class="container" onclick="filterObjects('4-rates')">My data interactions demand high transaction or transfer rates.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          </div>
+
+      <span style="font-size: 25px;">5. </span><span style="font-size: 18pt">How are you expecting to access this data?</span> 
+      <div class="question">
+          <label class="container" onclick="filterObjects('5-anywhere')">I need easy access to this data from anywhere, even when I don't have my own computer or mobile device with me.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+          <label class="container" onclick="filterObjects('5-freq')">I frequently need access from a mobile device such as a phone or tablet.
+              <input type="checkbox">
+              <span class="checkmark"></span>
+          </label>
+      </div>
+
+      </div>
+    </div>
+  </div>
+  <div class="main-area">
+    <h1>Data Storage Options</h1>
+    <div class="objects">
+      <div class="info-card high 2-durability 2-availability 3-greaterthan 4-files 4-rates" >AWS Elastic Block Store</div>
+        <div class="info-card high 2-durability 2-availability 3-greaterthan 4-files">AWS Web Services Glacier</div>
+        <div class="info-card high 2-durability 3-greaterthan 4-files 4-rates 5-anywhere">BioHPC Cloud</div>
+        <div class="info-card moderate 3-greaterthan 4-files 4-rates">CAC Red Cloud Storage</div>
+        <div class="info-card moderate 3-lessthan 5-anywhere 5-freq">CISER Data & Reproduction Archive</div>
+        <div class="info-card moderate 2-durability 2-availability 3-greaterthan 4-files 5-anywhere">Shared File Services</div>
+        <div class="info-card moderate 2-durability 3-lessthan 5-anywhere 5-freq">Google Drive</div>
+        <div class="info-card moderate 2-durability 3-greaterthan 5-anywhere 5-freq">Kaltura Video on Demand</div>
+        <div class="info-card moderate 2-durability 3-lessthan 4-files 5-anywhere 5-freq">Microsoft OneDrive</div>
+        <div class="info-card moderate 2-durability 3-greaterthan 4-files 5-anywhere 5-freq">Microsoft Shared Libraries</div>
+        <div class="info-card high 3-greaterthan 4-files 4-rates">AWS Elastic File System</div>
+        <div class="info-card high 2-durability 2-availability 3-greaterthan 4-files 4-rates 5-anywhere 5-freq">Amazon Web Services S3</div>
+        <div class="info-card moderate 3-greaterthan 4-files 4-rates">CAC Archival Storage</div>
+        <div class="info-card moderate 2-durability 3-lessthan 3-greaterthan 4-files 5-anywhere">CCSS Research Servers</div>
+        <div class="info-card high 2-durability 2-availability 3-greaterthan 4-files 5-anywhere 5-freq">EZ-Backup Static Storage</div>
+        <div class="info-card moderate 2-durability 2-availability 3-lessthan">LabArchives</div>
+        <div class="info-card moderate 2-durability 3-greaterthan 4-files 5-anywhere 5-freq">Microsoft Sharepoint</div>
+        <div class="info-card moderate 2-durability 3-greaterthan 4-files 5-anywhere 5-freq">Microsoft Teams</div>
+    </div>
+  </div>
+<script src="2-test.js"></script>
+</body>
+</html>
+
